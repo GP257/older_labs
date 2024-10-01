@@ -1,0 +1,108 @@
+
+\documentclass[12pt]{geophysics}
+\begin{document}
+
+\def\figdir{Fig}
+\Large
+\begin{center}
+{\bf Due Date: Friday, January 20, 2015 - 5:00 pm \\
+Your name: Devsirme Janissaries}
+\end{center}
+
+\section{Introduction}
+
+The purpose of this homework is to get you some exposure  to git, python, and working on a cluster. The homework is composed of three parts. In the first part you will create a
+git archive that you will use for the remainder of the class. The second task
+will involve modifying a python script that parses a webserver access file. The final
+part, only for those taking the class for more than two units, involves modifying a
+python script that submits jobs to the grid engine.
+
+
+
+\section{PROBLEM 1: git [5 Pts]}
+Git is a revision control system that can be very useful in code development.
+For the remaining homework assignments you will be required to store your assignments
+in a repository that you will create during this assignment. Begin by logging into cees-rcf.stanford.edu.
+
+\par
+A git archive has already been created for you. This is a protected
+archive that only you, the TA, and I will be able to access. Your first step is
+to {\tt clone} the archive. I would suggest first changing into your work directory
+on {\tt /data/cees/gp257/username},  once there, enter the git command:
+\begin{verbatim}
+git clone git@zapad.Stanford.EDU:GP257/lab_USERNAME  USERNAME
+\end{verbatim}
+where {\tt USERNAME} is your Stanford ID. This command will copy your Git archive from
+the CEES gitlab server to the directory {\tt USERNAME}.  
+\par
+After cloning the archive you should see lab1 in your {\tt USERNAME} directory.
+In that directory you will find:
+\begin{itemize}
+\item This \TeX file and the associated PDF file
+\item A makefile to compile and run various parts of this lab
+\item A python script that you need to edit that parses the webserver logfile (part 2)
+\item The python script that we worked on in class that could run parallel jobs on a single machine (part 3)
+\item  The source code to estimate pi
+\item  An example script for submitting to the grid engine
+\end{itemize}
+ 
+Next lets download a logFile used in the next part using (this should be on one line)
+\begin{verbatim}
+curl -o logFile
+http://sepwww.stanford.edu/data/media/public/sep/bob/download/logFile
+\end{verbatim}
+This isn't really source code so lets tell git to not track changes
+to this file. We can do this by editing our {\tt .gitignore}. The {\tt
+.gitignore} using the regex syntax used in the second part of this lab.
+To excluded this file we will simply use the file name. Using your
+favorite text editor add the line {\tt logFile} to your {\tt .gitignore} file.
+ 
+
+\section{PROBLEM 2: PARSING A LOG FILE [5 Pts]}
+In this section you will modify a working Python code to be more memory efficient.
+Currently the code reads in the log file, storing the access information in a dictionary.
+Each element of the dictionary is referenced by its web address, and contains an array
+of all of the requests for the given page. These requests are stored within the class
+structure page access. When executed the first argument of the command line is
+used to search the database of web pages. All pages that match the command line
+string are printed.
+\par
+The memory requirements of using this approach can be significant. Each reference
+to each page is stored in memory. For large logfiles this often becomes cost
+prohibitive. Your assignment is to modify the script so that only web addresses that
+fit the string that the user requests to search for are added to the dictionary. In addition I want you to organize the search results. Printing out all of the lines associated with a given file together. You
+can run the current script by typing {\tt make script\_test} in your working directory.
+(check out the {\tt Makefile} for the underlying workflow).
+
+\section{PROBLEM 3: SUBMITTING JOBS TO THE GRID ENGINE [10 Pts]}
+The final part of the homework is only required if you are doing the class for more
+than two units.
+Begin by compiling the executable by typing {\tt make piCalc.x}.
+Look at {\tt sub.sh}.  This is an example script used to submit jobs to the cluster.  This script is written to run {\tt piCalc.x} program on one core of the cluster. We can submit the job to the cluster by typing
+{\tt qsub sub.sh}.  You can then run {\tt qstat} to see all of the jobs
+running on the cluster. You can see just your job by running 
+{\tt qstat |grep USERNAME |grep piCalc.x} where USERNAME is your username.  
+The result should be six fields. The job ID, the name we gave our script {piCalc.x}, your username, how long it has been running, the job's status (R-running, C-completed, W-waiting to run), and the queue the job has
+been assigned to (in this case default).
+\par 
+The goal of this portion of the assignment is to build upon the script 
+for running parallel jobs on a single node. Your assignment is to
+\begin{itemize}
+\item Derive a new class, {\tt gridParallelJob} from {\tt runParallelJob}. You will need the following functions to work with grid engine. You will need to override the {\tt startJob} and {\tt checkJobRunning} routines.
+Hints:
+\begin{itemize}
+  \item  You will need build a submit script similar to the one included in the lab for each job and then execute {\tt qsub}.
+  \item You will need to parse the {\tt qstat} command to check the job status
+  \item You should use the process ids to keep track of the jobs.
+  \item You will need to edit where {\tt piCalc} writes stdout so it is in your data directory.
+\end{itemize}
+\item You should inherit the {\tt piParallelGrid} class from your {\tt gridParallelJob}. This class should be nearly identical to the original {\tt piParallel} class.
+\end{itemize}
+
+\section{SUBMITTING THE ASSIGNMENT}
+Remove the executable ({\tt  make clean}). 
+Then add all the files you have created and want to share with {\tt git add}, and commit the final version of your lab with {\tt git commit -m "Finished lab1"}.
+Check that if all updates are committed by looking at the output of {\tt git status}.
+Finally pushed those changes onto the server with {\tt git push}.
+\end{document}
+

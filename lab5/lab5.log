@@ -1,0 +1,217 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2016.5.7)  2 MAR 2017 12:21
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**lab5.ltx
+(./lab5.ltx
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(/opt/share/texmf/tex/latex/seg/geophysics.cls
+Document Class: geophysics 2007/02/14 v3.0 Geophysics paper
+(/opt/share/texmf/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/opt/share/texmf/tex/latex/base/article.cls
+Document Class: article 2004/02/16 v1.4f Standard LaTeX document class
+(/opt/share/texmf/tex/latex/base/size12.clo
+File: size12.clo 2004/02/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/opt/share/texmf/tex/latex/seg/seg.sty
+(/opt/share/texmf/tex/latex/oberdiek/ifpdf.sty
+Package: ifpdf 2001/06/14 v1.0 Providing \ifpdf (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected on input line 140.
+)
+(/opt/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/opt/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/opt/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/opt/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/opt/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/opt/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/opt/share/texmf/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks15
+\verbatim@line=\toks16
+\verbatim@in@stream=\read1
+)
+(/opt/share/texmf/tex/latex/misc/moreverb.sty
+Package: moreverb 1997/12/07 v2.2d.2 `more' verbatim facilities
+\verbatim@out=\write3
+\tab@position=\count88
+\tab@size=\count89
+\listing@line=\count90
+))
+(/opt/share/texmf/tex/latex/misc/rotating.sty
+Package: rotating 1997/09/26, v2.13 Rotation package
+\c@r@tfl@t=\count91
+\rot@float@box=\box26
+)
+\c@@plots=\count92
+
+(/opt/share/texmf/tex/latex/subfig/subfig.sty
+Package: subfig 2004/01/28 ver: 1.2 subfig package
+
+(/opt/share/texmf/tex/latex/caption/caption.sty
+Package: caption 2006/01/12 v3.0i Customising captions (AR)
+
+(/opt/share/texmf/tex/latex/caption/caption3.sty
+Package: caption3 2006/01/12 v3.0i caption3 kernel (AR)
+\captionmargin=\dimen105
+\captionmarginx=\dimen106
+\captionwidth=\dimen107
+\captionindent=\dimen108
+\captionparindent=\dimen109
+\captionhangindent=\dimen110
+)
+Package caption Info: rotating package v2.0 (or newer) detected on input line 3
+66.
+)
+\c@KVtest=\count93
+\sf@farskip=\skip43
+\sf@captopadj=\dimen111
+\sf@capskip=\skip44
+\sf@nearskip=\skip45
+\c@subfigure=\count94
+\c@subfigure@save=\count95
+\c@lofdepth=\count96
+\c@subtable=\count97
+\c@subtable@save=\count98
+\c@lotdepth=\count99
+\sf@top=\skip46
+\sf@bottom=\skip47
+)
+\c@sub@fig=\count100
+\c@@tabls=\count101
+
+(/opt/share/texmf/tex/latex/natbib/natbib.sty
+Package: natbib 2003/06/06 7.1 (PWD)
+\bibhang=\skip48
+\bibsep=\skip49
+LaTeX Info: Redefining \cite on input line 518.
+\c@NAT@ctr=\count102
+)
+LaTeX Info: Redefining \refname on input line 324.
+\seg@abstract=\box27
+\c@@append=\count103
+)
+No file lab5.aux.
+\openout1 = `lab5.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+(/opt/share/texmf/tex/context/base/supp-pdf.tex
+(/opt/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Miscellaneous (2004.10.26)
+\protectiondepth=\count104
+\scratchcounter=\count105
+\scratchtoks=\toks17
+\scratchdimen=\dimen112
+\scratchskip=\skip50
+\scratchmuskip=\muskip10
+\scratchbox=\box28
+\scratchread=\read2
+\scratchwrite=\write4
+\zeropoint=\dimen113
+\onepoint=\dimen114
+\onebasepoint=\dimen115
+\minusone=\count106
+\thousandpoint=\dimen116
+\onerealpoint=\dimen117
+\emptytoks=\toks18
+\nextbox=\box29
+\nextdepth=\dimen118
+\everyline=\toks19
+\!!counta=\count107
+\!!countb=\count108
+\recursecounter=\count109
+)
+loading : Context Support Macros / PDF (2004.03.26)
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen119
+\MPnumerator=\count113
+\everyMPtoPDFconversion=\toks20
+) (/opt/share/texmf/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2003/03/25 v2.04 ragged2e Package (MS)
+
+(/opt/share/texmf/tex/latex/ms/everysel.sty
+Package: everysel 1999/06/08 v1.03 EverySelectfont Package (MS)
+LaTeX Info: Redefining \selectfont on input line 125.
+)
+\CenteringLeftskip=\skip51
+\RaggedLeftLeftskip=\skip52
+\RaggedRightLeftskip=\skip53
+\CenteringRightskip=\skip54
+\RaggedLeftRightskip=\skip55
+\RaggedRightRightskip=\skip56
+\CenteringParfillskip=\skip57
+\RaggedLeftParfillskip=\skip58
+\RaggedRightParfillskip=\skip59
+\JustifyingParfillskip=\skip60
+\CenteringParindent=\skip61
+\RaggedLeftParindent=\skip62
+\RaggedRightParindent=\skip63
+\JustifyingParindent=\skip64
+) [1
+
+{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./lab5.aux)
+ ) 
+Here is how much of TeX's memory you used:
+ 2026 strings out of 495063
+ 27759 string characters out of 3182202
+ 80714 words of memory out of 3000000
+ 5221 multiletter control sequences out of 15000+200000
+ 5059 words of font info for 19 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 50i,5n,44p,310b,182s stack positions out of 5000i,500n,10000p,200000b,50000s
+</opt/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></opt/share/texmf/fonts/t
+ype1/bluesky/cm/cmr12.pfb></opt/share/texmf/fonts/type1/bluesky/cm/cmtt12.pfb>
+Output written on lab5.pdf (2 pages, 26568 bytes).
+PDF statistics:
+ 23 PDF objects out of 1000 (max. 8388607)
+ 15 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

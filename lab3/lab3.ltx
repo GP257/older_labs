@@ -1,0 +1,78 @@
+\documentclass[12pt]{geophysics}
+\usepackage{amsmath}
+\setfigdir{Fig}
+
+\begin{document}
+\Large
+\begin{center}
+{\bf Due Date: Friday, Feb 17, 2015 - 11:59 pm}
+\end{center}
+
+\title{Lab 3: Optimization of Time-domain Finite-difference wavefield modeling}
+\author{Vladimir Goldenhorde}
+\righthead{}
+\lefthead{GP257}
+\maketitle
+
+\begin{abstract}
+In this exercise you will be asked to speed up a Finite-difference wavefield modeling code. You will be given a briefing of the theoretic background of finite difference modeling and a working code, however the code is very inefficient and can be improved significantly in many aspects. Your goal is to find out all possible speed ups and make it as fast as you can.
+\end{abstract}
+
+
+\section{Introduction to Finite difference wavefield modeling}
+\noindent Wavefield modeling is a fundamental tool used in geophysics. 
+Many advance imaging and velocity analysis techniques require wave propagation.
+There are many ways to extrapolate wavefields. They vary in computational diffcuilty and accuracy.
+In this lab, you will be introduced the basics of full-wave propagation using the time-domain finite difference (TDFD) technique. 
+ 
+\subsection{Time-domain finite difference (TDFD)}
+The following shows the acoustic wave equation for an isotropic constant density media:
+\begin{equation}
+\frac{\partial^2 P(x,z,t)}{\partial t^2} = v^2 \nabla^2 P(x,z,t) + f(x,z,t),
+\end{equation}
+\noindent where $P(x,z,t)$ represents the wavefield in time $t$ and at subsurface location $(x,z)$, $f(x,z,t)$ is the source term that injects the initial energy into the propagation domain. In our case, the point source is very compact in time and space, meaning that $f(x,z,t)$ is mostly zero, we will ignore $f$ for this moment.
+
+Notice there is a second derivative in time ($\frac{\partial^2 }{\partial t^2}$) and a Laplacian ($\nabla^2=(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial z^2} ) $) in space.
+In TDFD, we discretize the wavefield in time $t=\{t_k\}$ and space $(x,z)=\{x_i,z_j\}$ with the notation $P_{ij}^{k}$.
+If a second-order approximation is used for the time derivative, we get the following time-marching equation:
+
+\begin{equation}
+\frac{(P_{ij}^{k-1} - 2P_{ij}^{k} +  P_{ij}^{k+1})}{\triangle t^2} = v^2  \nabla^2 P_{ij}^{k} \nonumber 
+\end{equation}
+\begin{equation}
+P_{ij}^{k+1} =  - P_{ij}^{k-1} + 2P_{ij}^{k} + v^2 \triangle t^2 \nabla^2 P_{ij}^{k}.
+\end{equation}
+
+\noindent The time-marching equation is the basis of wavefield extrapolation in the time-domain. 
+To calculate the wavefield for the next time slice ($P_{ij}^{k+1}$), you use the information from the current ($P_{ij}^{k}$) and the previous time slices ($P_{ij}^{k-1}$). 
+Besides the time-derivative, the Laplacian ($\nabla^2$) will need to be approximated with finite-differences. 
+To get a lower numerical error, people often use a higher order approximation for the spatial derivatives.
+For example, the 10th order finite-difference approximation will use 11 points along each axis to compute the Laplacian operator. i.e:
+
+\begin{eqnarray*}
+ \frac{\partial^2}{\partial x^2}P_{i,j} & = & \frac{1}{\triangle x^2} * \big( \\
+ &  & c_{-5}P_{i-5,j} + c_{5}P_{i+5,j} + \\
+ &  & c_{-4}P_{i-4,j} + c_{4}P_{i+4,j} + \\
+ &  & c_{-3}P_{i-3,j} + c_{3}P_{i+3,j} + \\
+ &  & c_{-2}P_{i-2,j} + c_{2}P_{i+2,j} + \\
+ &  & c_{-1}P_{i-1,j} + c_{1}P_{i+1,j} + \\
+ &  & c_{0}P_{i,j} \\
+ &  & \big).
+\end{eqnarray*}
+Similarly for $z$ axis. The coefficients $c_m$ are carefully crafted such that they minimizes the approximation error. These coefficients are provided to you in the code.
+
+\section{Problem: Finite-difference modeling code optimization. [20 Pts]}
+You are given {\tt prop.cc} and {\tt field.cc} to start with, this code performs the TDFD wavefield modeling and report the time of computation.
+First, you should figure out how the code does it, and starting from there, modify the code to gradually reduce its inefficiency. \textbf{ Remember to mark all changes you made and write down the new run-time every time you are adding an improvement.}
+
+
+
+\section{What to submit}
+Remember you should submit all files through \textbf{git}.
+You should hand in:
+\begin{enumerate}
+\item The new modeling code, \textbf{highlight} everything you modified.
+\item A written report, which list every major modification you made, explain the reason, and report the corresponding improvements in run-time you measured. In the end, report you final speed-up ratio.  Try to make your points clear and well-organized in the report, you can use simple text file, if you need extra formatting or use a table in your report, you can submit a PDF instead.
+\end{enumerate}
+\end{document}
+

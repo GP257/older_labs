@@ -1,0 +1,5 @@
+.texpadtmp
+*.sw*
+*.o
+*.x
+*.a

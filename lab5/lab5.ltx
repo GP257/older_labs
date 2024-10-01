@@ -1,0 +1,37 @@
+
+\documentclass[12pt]{geophysics}
+\begin{document}
+
+\def\figdir{Fig}
+\Large
+\begin{center}
+{\bf Due Date: Before Wednesday of final's week  \\
+Your name:  }
+\end{center}
+
+\section{Introduction}
+In this lab you will be working with TBB.  There are two parts to the
+lab with increasing difficulty. If you are taking the class for two credits
+you only need to do the first two parts of the lab.
+
+
+\section{Getting started}
+Begin by logging into cees-rcf {\tt ssh -Y cees-tool-7} and cloning your git repository.  In this lab you will be blocking, parallelizing, and potentially vectorizing, a code that 
+does acoustic finite differences, the same basic algorithm you saw in lab3.
+\section{PROBLEM 1: Blocking  [5 Pts]}
+Compile the code and record the time to execute the serial code.
+Next introduce blocking to the code, basically instead of running through the domain
+in a completely sequential manner, break the code into a series of blocks.  Make the block
+size parameterizable on the command line.  You will find the class exercise  useful to 
+complete this part of the code.  Test several different block sizes. Comment on your results.
+
+\section{Problem 2: TBB [5 Pts]}
+Next introduce parallelization using TBB. Parallelize over the blocks you created in the previous section.  Try and record several different block sizes. Is the block size different when you parallelize? Comment on the results.
+
+\section{Problem 3: ISPC [10 Pts]}
+Finally, use ispc to vectorize your problem. You will find the ispc compiler in {\tt /data/cees/gp257/ispc-v1.8.1-linux}. There are several different ways to vectorize the problem. Comment on why you chose your given strategy. Test different block sizes and comment on the results.
+\par
+Record your best speedup using all three techniques.
+
+\end{document}
+
